@@ -11,7 +11,8 @@
     "ghcr.io/devcontainers-contrib/features/aws-cdk:2": {},
     "ghcr.io/devcontainers/features/docker-in-docker:2": {},
     "ghcr.io/devcontainers-contrib/features/typescript:2": {},
-    "ghcr.io/devcontainers-community/npm-features/typescript:1": {}
+    "ghcr.io/devcontainers-community/npm-features/typescript:1": {},
+    "ghcr.io/devcontainers/features/node:1": {}
   },
   "customizations": {
     "vscode": {

@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from copykitt import generate_branding_snippet, generate_keywords
+from app.copykitt import generate_branding_snippet, generate_keywords
 from fastapi import HTTPException
 
 app = FastAPI()

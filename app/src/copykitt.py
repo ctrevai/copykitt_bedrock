@@ -5,7 +5,8 @@ import os
 import argparse
 import re
 
-os.environ['AWS_PROFILE'] = 'ctdev'
+#only for testing locally
+#os.environ['AWS_PROFILE'] = 'ctdev'
 
 MAX_INPUT_LENGTH = 32
 

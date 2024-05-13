@@ -6,7 +6,7 @@ from fastapi.openapi.utils import get_openapi
 from fastapi.openapi.docs import get_swagger_ui_html
 from fastapi.middleware.cors import CORSMiddleware
 
-app = FastAPI()
+app = FastAPI(root_path="/prod") #to make swagger work add root_path="/prod" same stage as APIGW
 handler = Mangum(app)
 
 MAX_KEYWORD_LENGTH = 32
@@ -48,24 +48,5 @@ def validate_input_lenght(prompt: str):
         )
     return True
 
-# show openapi.json in lambda
 
-
-@app.get("/docs", include_in_schema=False)
-async def get_documentation():
-    return get_swagger_ui_html(openapi_url="/openapi.json", title="CopyKitt API")
-
-
-@app.get("/openapi.json", include_in_schema=False)
-async def access_openapi():
-    return get_openapi(title=app.title, version=app.version, routes=app.routes)
-    # openapi = get_openapi(
-    #     title=app.title,
-    #     version=app.version,
-    #     description=app.description,
-    #     routes=app.routes,
-    #     tags=app.openapi_tags,
-    # )
-    # openapi["servers"] = [{"url": app.root_path}]
-    # return openapi
 # uvicorn copykitt_api:app --reload
